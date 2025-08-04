@@ -55,18 +55,18 @@ export const register = async (req, res) => {
 
 
    const transporter = nodemailer.createTransport({
-      // service: "gmail",
-      host: process.env.MAILTRAP_HOST,
-      port: process.env.MAILTRAP_PORT,
+      service: process.env.MAIL_SERVICE,
+      host: process.env.MAIL_HOST,
+      port: process.env.MAIL_PORT,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.MAILTRAP_USERNAME,
-        pass: process.env.MAILTRAP_PASSWORD,
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD,
       },
     });
 
     const mailOptions = {
-      from: process.env.MAILTRAP_SENDER_EMAIL,
+      from: process.env.MAIL_FROM,
       to: user.email,
       subject: "Verify your account",
       text: `Please click on the following link:

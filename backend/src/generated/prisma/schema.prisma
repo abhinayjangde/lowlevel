@@ -31,9 +31,10 @@ model User {
 
   isVerified Boolean @default(false)
 
-  verificationToken String? // Token for email verification
-  resetToken        String? // Token for password reset
-  resetTokenExpiry  DateTime? // Expiry time for the password reset token
+  verificationToken      String? // Token for email verification
+  verificationTokenExpir String? // Verification Token Expiry
+  resetToken             String? // Token for password reset
+  resetTokenExpiry       DateTime? // Expiry time for the password reset token
 
   // Relationships
   problems      Problem[] // Problems created by this user

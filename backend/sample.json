@@ -2,7 +2,11 @@
   "title": "Add Two Numbers",
   "description": "Given two numbers a and b add them up and return the outout",
   "difficulty": "EASY",
-  "tags": ["math", "operators", "addition"],
+  "tags": [
+    "math",
+    "operators",
+    "addition"
+  ],
   "examples": {
     "PYTHON": {
       "input": "3 7",
