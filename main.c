@@ -4,8 +4,11 @@
 
 int main(int argc, char **argv)
 {
-    __int32 age = 23;
-    printf("size of int: %zu", sizeof(__int16));
+    int a = 10;
+    int b = 4;
+
+    printf("%d", sizeof(a++));
+    printf("%d", a);
 
     return EXIT_SUCCESS;
 }
