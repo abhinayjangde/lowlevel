@@ -4,16 +4,8 @@
 
 int main(int argc, char **argv)
 {
-    if (argc < 2)
-    {
-        puts("Argument missing.");
-        return EXIT_FAILURE;
-    }
-
-    for (int i = 0; i < argc; i++)
-    {
-        printf("%s\n", argv[i]);
-    }
+    __int32 age = 23;
+    printf("size of int: %zu", sizeof(__int16));
 
     return EXIT_SUCCESS;
 }
