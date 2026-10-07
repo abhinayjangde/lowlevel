@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include "custom.h"
 
-
+void fx(){
+    char a;
+    if((a = getchar()) != '\n')
+        fx();
+    
+    if(a != '\n')
+        putchar(a);
+    
+}
 int main(int argc, char *argv[]){
-   
-    char *name = "John Doe";
-    printf("Hello, %s!\n", name);
-
+    fx();
     return 0;
 }
 
