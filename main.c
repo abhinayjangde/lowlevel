@@ -1,18 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int gateStaticTrap(int n)
+void func(int i, int j)
 {
-    int d = 0; // Initialized ONLY ONCE in the Data Segment
-    d = d + 1;
-    if (n <= 1)
-        return 1;
-
-    // Warning: d is modified inside the recursive call!
-    return gateStaticTrap(n - 1) + d;
+    if (i < j)
+    {
+        int i = 0;
+        while (i < 10)
+        {
+            j += 2;
+            i++;
+        }
+    }
+    printf("%d", j);
 }
 
 int main()
 {
-    printf("%d\n", gateStaticTrap(4));
+
+    int i = 9, j = 10;
+    func(i, j);
+
     return 0;
 }
