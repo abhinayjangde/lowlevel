@@ -3,15 +3,19 @@
 
 int main(void)
 {
-    int i;
-    for (i = 0; i < 3; i++)
+    int n;
+
+    printf("Enter an integer: ");
+
+    if (scanf("%d", &n) != 1)
     {
-        if (fork() == 0)
-        {
-            continue;
-        }
-        break;
+        printf("Invalid input\n");
+        return 1;
     }
-    printf("Hello!\n");
+
+    if (n & 1)
+        printf("Odd\n");
+    else
+        printf("Even\n");
     return 0;
 }
