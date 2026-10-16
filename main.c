@@ -1,11 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
-
-int main()
+int main(void)
 {
-
-   printf("Hello, World!\n");
-
+    int i;
+    for (i = 0; i < 3; i++)
+    {
+        if (fork() == 0)
+        {
+            continue;
+        }
+        break;
+    }
+    printf("Hello!\n");
     return 0;
 }
