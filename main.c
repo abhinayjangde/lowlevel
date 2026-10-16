@@ -1,12 +1,9 @@
 #include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
 int main(void)
 {
-    char buffer[8];
-
-    strcpy(buffer, "ABCDEFGHIJKLMN");
-
-    printf("%s\n", buffer);
+    fork();
+    printf("Hello\n");
     return 0;
 }
