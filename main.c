@@ -1,21 +1,12 @@
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
 int main(void)
 {
-    int n;
+    char buffer[8];
 
-    printf("Enter an integer: ");
+    strcpy(buffer, "ABCDEFGHIJKLMN");
 
-    if (scanf("%d", &n) != 1)
-    {
-        printf("Invalid input\n");
-        return 1;
-    }
-
-    if (n & 1)
-        printf("Odd\n");
-    else
-        printf("Even\n");
+    printf("%s\n", buffer);
     return 0;
 }
