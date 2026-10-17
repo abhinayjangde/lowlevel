@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main(void)
 {
-    fork();
-    printf("Hello\n");
+
+    puts(fork() == 0);
+
     return 0;
 }
