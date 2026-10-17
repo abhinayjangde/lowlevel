@@ -5,6 +5,9 @@
 int main(void)
 {      
     array *arr = createArray(4);
+    if (arr == NULL) {
+        return 1;
+    }
     
     arr->append(arr, 34);
     arr->append(arr, 3);
