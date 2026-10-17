@@ -1,114 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct array
+typedef struct Node
 {
-    int capacity;
-    int size;
-    int *arr;
-} array;
+    int data;
+    struct Node *next;
+} Node;
 
-array *createArray(int capacity)
-{
-    array *arr = (array *)malloc(sizeof(array));
-    if (arr == NULL)
-    {
-        printf("error while allocating memory\n");
-        return NULL;
-    }
-    arr->capacity = capacity;
-    arr->size = 0;
-    arr->arr = (int *)malloc(capacity * sizeof(int));
-    if (arr->arr == NULL)
-    {
-        printf("error while allocating memory\n");
-        free(arr);
-        return NULL;
-    }
-    return arr;
+Node * createSinglyLinkedList(){
+    Node * head = (Node *)malloc(sizeof(Node));
+    return head;
 }
 
-void append(array *arr, int val)
-{
-    // checking if array is full
-    if (arr->size >= arr->capacity)
-    {
-        printf("array capacity is full\n");
+void addAtLast(Node* head, int val){
+    if(head == NULL){
+        head->data = val;
         return;
     }
-
-    // if space available then insert new element
-    arr->arr[arr->size] = val;
-    arr->size += 1;
+    Node *temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+    Node * n = (Node*)malloc(sizeof(Node));
+    n->data = val;
+    n->next = NULL;
 }
 
-void appendAt(array *arr, int index, int val) {}
-
-int get(array *arr, int index)
-{
-    if (arr->size == 0)
-    {
-        printf("array is empty\n");
-        return -1;
+void print(Node * head){
+    Node * temp = head;
+    while(temp->next){
+        printf("%d ", temp->data);
+        temp = temp->next;
     }
-    if (index < 0 || index >= arr->size)
-    {
-        printf("invalid index\n");
-        return -1;
-    }
-    return arr->arr[index];
-}
-
-void print(array *arr)
-{
-    for (size_t i = 0; i < arr->size; i++)
-    {
-        printf("%d ", arr->arr[i]);
-    }
-    printf("\n");
-}
-
-void delete(array *arr, int index)
-{
-    if (index < 0 || index >= arr->size)
-    {
-        printf("Invalid index\n");
-        return;
-    }
-    if (arr->size == 0)
-    {
-        printf("array is empty\n");
-        return;
-    }
-    for (size_t i = index; i < arr->size - 1; i++)
-    {
-        arr->arr[i] = arr->arr[i + 1];
-    }
-    arr->size -= 1;
 }
 int main(void)
 {
-    array *marks = createArray(6);
-    if (marks == NULL)
-        return 1;
-    append(marks, 4);
-    append(marks, 2);
-    append(marks, 9);
-    append(marks, 79);
-    append(marks, 7);
-    append(marks, 60);
+    Node * head = createSinglyLinkedList();
+    addAtLast(head, 4);
+    addAtLast(head, 49);
+    addAtLast(head, 8);
 
-    // int index = 3;
-    // int val = get(marks,index);
-    // printf("value at %d index is %d\n",index, val);
+    print(head);
 
-    delete(marks, 1);
-
-    print(marks);
-    // printf("size: %d\n", marks->size);
-    // printf("capacity: %d\n", marks->capacity);
-
-    free(marks->arr);
-    free(marks);
     return 0;
 }
