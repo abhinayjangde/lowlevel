@@ -2,20 +2,14 @@
 #include <stdlib.h>
 #include "custom/array.h"
 
+typedef struct node {
+    int data;
+    struct node *left;
+    struct node *right;
+} node;
+
 int main(void)
 {      
-    array *arr = createArray(4);
-    if (arr == NULL) {
-        return 1;
-    }
-    
-    arr->append(arr, 34);
-    arr->append(arr, 3);
-    arr->append(arr, 9);
-   
-    arr->print(arr);
-
-    free(arr->ptr);
-    free(arr);
+    puts("hello");
     return 0;
 }
