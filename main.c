@@ -1,11 +1,8 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <sys/wait.h>
+#include <stdlib.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
-
-    puts(fork() == 0);
-
+    printf("hello world\n");
     return 0;
 }
