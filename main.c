@@ -33,14 +33,24 @@ void print(Node * head){
         temp = temp->next;
     }
 }
+
+void f(){
+    static int x = 0;
+    x++;
+    printf("%d",x);
+}
 int main(void)
 {
-    Node * head = createSinglyLinkedList();
-    addAtLast(head, 4);
-    addAtLast(head, 49);
-    addAtLast(head, 8);
+    // Node * head = createSinglyLinkedList();
+    // addAtLast(head, 4);
+    // addAtLast(head, 49);
+    // addAtLast(head, 8);
 
-    print(head);
+    // print(head);
+
+   f();
+   f();
+   f();
 
     return 0;
 }
