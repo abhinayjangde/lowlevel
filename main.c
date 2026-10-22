@@ -34,11 +34,7 @@ void print(Node * head){
     }
 }
 
-void f(){
-    static int x = 0;
-    x++;
-    printf("%d",x);
-}
+
 int main(void)
 {
     // Node * head = createSinglyLinkedList();
@@ -48,9 +44,7 @@ int main(void)
 
     // print(head);
 
-   f();
-   f();
-   f();
+    printf("%zu bytes (64 bit word size)\n", sizeof(int*));
 
     return 0;
 }
