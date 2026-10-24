@@ -1,0 +1,14 @@
+total 84
+-rw-rw-rw-  1 codespace codespace    77 Oct 17 08:57 Makefile
+-rw-rw-rw-  1 codespace root       4805 Oct 22 16:52 README.md
+-rwxrwxrwx  1 codespace codespace 16008 Oct 24 10:02 a.out
+drwxrwxrwx+ 2 codespace codespace  4096 Oct 22 16:40 bin
+drwxrwxrwx+ 2 codespace codespace  4096 Oct 17 08:51 custom
+drwxrwxrwx+ 2 codespace codespace  4096 Oct 17 10:32 docs
+-rwxrwxrwx  1 codespace codespace  9424 Oct 22 16:47 hello
+-rw-rw-rw-  1 codespace codespace   264 Oct 22 16:52 hello.asm
+-rw-rw-rw-  1 codespace codespace  2208 Oct 22 16:47 hello.o
+-rw-rw-rw-  1 codespace codespace     0 Oct 24 10:24 hello.txt
+drwxrwxrwx+ 2 codespace codespace  4096 Oct 17 08:51 lib
+-rwxrwxrwx  1 codespace codespace 15992 Oct 24 10:15 main
+-rw-rw-rw-  1 codespace codespace   189 Oct 24 10:14 main.c
