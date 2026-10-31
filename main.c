@@ -2,13 +2,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int list(){
-    system("touch hello.txt && ls -l > hello.txt");
-    return 0;
-}
+void fx(){
+    char a;
 
+    if ((a= getchar()) != '\n'){
+        fx();
+    }
+    if(a != '\n'){
+        putchar(a);
+    }
+}
 int main(void)
 {   
-    list();
+   fx();
     return 0;
 }
